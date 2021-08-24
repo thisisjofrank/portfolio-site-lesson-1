@@ -1,1 +1,59 @@
-{\rtf1}
+:root {
+    --primary: red;
+    --secondary: orange;
+    --tertiary: yellow;
+    --dk-grey: #333;
+
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    margin-bottom: 4rem;
+    font-size: 5vw;
+    font-weight: bold;
+    line-height: 1.4em;
+}
+
+.header-link {
+    position: relative;
+    display: block;
+    display: flex; /* for the arrow */
+    align-items: center; /* for the arrow */
+    justify-content: space-between; /* for the arrow */
+    padding: 1rem;
+    border: 2px solid var(--primary);
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--primary)
+}
+
+.header-link:hover {
+    background-color: var(--primary);
+    color: white;
+}
+
+/* getting fancy! */
+.header-link::after {
+    content: '';
+    width: 0;
+    height: 0;
+    margin-left: 1rem;
+    border-left: .5rem solid transparent;
+    border-right: .5rem solid transparent;
+    border-top: .75rem solid var(--primary);
+}
+
+.header-link:hover::after {
+    border-top-color: white;
+}
